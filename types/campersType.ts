@@ -1,6 +1,9 @@
 export interface CampersResponse {
+  page: number;
+  perPage: number;
   total: number;
-  items: Camper[];
+  totalPages: number;
+  campers: Camper[];
 }
 
 export interface Camper {
@@ -9,7 +12,6 @@ export interface Camper {
   price: number;
   rating: number;
   location: string;
-  description: string;
   form: string;
   length: string;
   width: string;
@@ -18,17 +20,9 @@ export interface Camper {
   consumption: string;
   transmission: string;
   engine: string;
-  AC: boolean;
-  bathroom: boolean;
-  kitchen: boolean;
-  TV: boolean;
-  radio: boolean;
-  refrigerator: boolean;
-  microwave: boolean;
-  gas: boolean;
-  water: boolean;
-  gallery: [];
-  reviews: CamperReview[];
+  amenities: string[];
+  coverImage: string;
+  totalReviews: number;
 }
 export interface CamperGallery {
   thumb: string;

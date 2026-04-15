@@ -1,15 +1,41 @@
+import { ChangeEvent } from "react";
 import css from "./FiltersSidebar.module.css";
 
-const FiltersSidebar = () => {
+interface FiltersSidebarProps {
+  inputLocation: string;
+  camperForm: string;
+  engine: string;
+  transmission: string;
+
+  handleLocationChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  handleFormChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  handleEngineChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  handleTransmissionChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  handleSubmit: (e: React.SyntheticEvent<HTMLFormElement>) => void;
+  handleClearFilters: () => void;
+}
+
+const FiltersSidebar = ({
+  inputLocation,
+  camperForm,
+  engine,
+  transmission,
+  handleLocationChange,
+  handleFormChange,
+  handleEngineChange,
+  handleTransmissionChange,
+  handleSubmit,
+  handleClearFilters,
+}: FiltersSidebarProps) => {
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <div>
         <label htmlFor="location">Location</label>
         <input
           id="location"
           type="text"
           name="location"
-          value={location}
+          value={inputLocation}
           onChange={handleLocationChange}
         />
       </div>
@@ -24,7 +50,7 @@ const FiltersSidebar = () => {
             type="radio"
             name="form"
             value="Alcove"
-            checked={form === "Alcove"}
+            checked={camperForm === "Alcove"}
             onChange={handleFormChange}
           />
           Alcove
@@ -35,7 +61,7 @@ const FiltersSidebar = () => {
             type="radio"
             name="form"
             value="Panel Van"
-            checked={form === "Panel Van"}
+            checked={camperForm === "Panel Van"}
             onChange={handleFormChange}
           />
           Panel Van
@@ -46,7 +72,7 @@ const FiltersSidebar = () => {
             type="radio"
             name="form"
             value="Integrated"
-            checked={form === "Integrated"}
+            checked={camperForm === "Integrated"}
             onChange={handleFormChange}
           />
           Integrated
@@ -57,7 +83,7 @@ const FiltersSidebar = () => {
             type="radio"
             name="form"
             value="Semi Integrated"
-            checked={form === "Semi Integrated"}
+            checked={camperForm === "Semi Integrated"}
             onChange={handleFormChange}
           />
           Semi Integrated
@@ -140,7 +166,9 @@ const FiltersSidebar = () => {
 
       <div>
         <button type="submit">Search</button>
-        <button type="button">Clear filters</button>
+        <button type="button" onClick={handleClearFilters}>
+          Clear filters
+        </button>
       </div>
     </form>
   );

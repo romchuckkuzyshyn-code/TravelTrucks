@@ -1,12 +1,17 @@
 import axios from "axios";
 import { Camper, CampersResponse } from "../types/campersType";
 
-const BASE_URL = "https://66b1f8e71ca8ad33d4f5f63e.mockapi.io";
+const BASE_URL = "https://campers-api.goit.study";
 const endpoint = "/campers";
 const url = BASE_URL + endpoint;
-
+const options = {
+  params: {
+    page: 1,
+    perPage: 4,
+  },
+};
 export const getCampers = async () => {
-  const res = await axios.get<CampersResponse>(url);
+  const res = await axios.get<CampersResponse>(url, options);
   return res.data;
 };
 
