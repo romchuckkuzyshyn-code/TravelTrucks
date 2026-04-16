@@ -1,5 +1,7 @@
 import { ChangeEvent } from "react";
 import css from "./FiltersSidebar.module.css";
+import { FaRegMap } from "react-icons/fa";
+import { IoCloseSharp } from "react-icons/io5";
 
 interface FiltersSidebarProps {
   inputLocation: string;
@@ -43,6 +45,7 @@ const FiltersSidebar = ({
           onChange={handleLocationChange}
           placeholder="Kyiv, Ukraine"
         />
+        <FaRegMap className={css.mapFind} />
       </div>
 
       <h3 className={css.title}>Filters</h3>
@@ -214,6 +217,7 @@ const FiltersSidebar = ({
           type="button"
           onClick={handleClearFilters}
         >
+          <IoCloseSharp className={css.xClose} />
           Clear filters
         </button>
       </div>

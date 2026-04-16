@@ -5,7 +5,8 @@ import { Camper } from "../../types/campersType";
 import { useQuery } from "@tanstack/react-query";
 import { getCampers } from "../../lib/api";
 import Image from "next/image";
-import Link from "next/link";
+import { FaCar, FaGasPump, FaRegMap, FaStar } from "react-icons/fa";
+import { TbManualGearbox } from "react-icons/tb";
 
 interface CampersListProps {
   filters: {
@@ -65,23 +66,31 @@ const CampersList = ({ filters, page, onLoadMore }: CampersListProps) => {
 
                   <div className={css.infoRow}>
                     <p className={css.rating}>
-                      ⭐ {camper.rating}({camper.totalReviews} Reviews)
+                      <FaStar className={css.starIcon} />
+                      {camper.rating}({camper.totalReviews} Reviews)
                     </p>
-                    <p className={css.location}>{camper.location}</p>
+
+                    <p className={css.location}>
+                      <FaRegMap className={css.mapFind} />
+                      {camper.location}
+                    </p>
                   </div>
 
                   <p className={css.description}>{camper.description}</p>
 
                   <ul className={css.features}>
                     <li className={css.feature}>
+                      <FaGasPump className={css.gas} />
                       {camper.engine.charAt(0).toUpperCase() +
                         camper.engine.slice(1)}
                     </li>
                     <li className={css.feature}>
+                      <TbManualGearbox className={css.gas} />
                       {camper.transmission.charAt(0).toUpperCase() +
                         camper.transmission.slice(1)}
                     </li>
                     <li className={css.feature}>
+                      <FaCar className={css.gas} />
                       {camper.form
                         .split("_")
                         .map(
@@ -92,7 +101,7 @@ const CampersList = ({ filters, page, onLoadMore }: CampersListProps) => {
                     </li>
                   </ul>
 
-                  <Link className={css.button}>Show more</Link>
+                  <button className={css.button}>Show more</button>
                 </div>
               </article>
             </li>
