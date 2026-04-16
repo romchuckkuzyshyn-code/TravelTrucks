@@ -118,6 +118,7 @@
 
 .loadMoreBtn {
   display: block;
+  justify-content: center;
   min-width: 145px;
   height: 56px;
   margin: 40px auto 0;
