@@ -53,6 +53,9 @@ const Page = () => {
     });
     setPage(1);
   }
+  function handleClickMoreBtn() {
+    setPage((prev) => prev + 1);
+  }
 
   return (
     <div className={css.container}>
@@ -68,7 +71,11 @@ const Page = () => {
         engine={engine}
         transmission={transmission}
       />
-      <CampersList filters={filters} page={page} />
+      <CampersList
+        filters={filters}
+        page={page}
+        onLoadMore={handleClickMoreBtn}
+      />
     </div>
   );
 };

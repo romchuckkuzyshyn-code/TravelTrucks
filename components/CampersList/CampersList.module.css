@@ -14,14 +14,14 @@
   width: 888px;
   min-height: 312px;
   padding: 24px;
-  border: 1px solid #dadde1;
+  border: none;
   border-radius: 20px;
-  background-color: #ffffff;
+  background-color: var(--background-main-color);
 }
 
 .image {
-  width: 292px;
-  height: 320px;
+  width: 219px;
+  height: 240px;
   border-radius: 10px;
   object-fit: cover;
   flex-shrink: 0;
@@ -41,14 +41,12 @@
 }
 
 .name {
-  margin: 0;
   font-size: 24px;
   font-weight: 600;
   line-height: 1.33;
 }
 
 .price {
-  margin: 0;
   font-size: 24px;
   font-weight: 600;
   line-height: 1.33;
@@ -62,23 +60,26 @@
 
 .rating,
 .location {
-  margin: 0;
   font-size: 16px;
   line-height: 1.5;
 }
 
 .description {
   margin: 0 0 24px;
-  color: #6c717b;
+  color: var(--desc-text);
   font-size: 16px;
   line-height: 1.5;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .features {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  padding: 0;
   margin: 0 0 24px;
   list-style: none;
 }
@@ -86,7 +87,7 @@
 .feature {
   padding: 12px 18px;
   border-radius: 100px;
-  background-color: #f2f4f7;
+  background-color: var(--badges--color);
   font-size: 16px;
   line-height: 1.5;
 }
@@ -94,11 +95,34 @@
 .button {
   width: 166px;
   height: 56px;
-  border: none;
   border-radius: 200px;
-  background-color: #849a8f;
-  color: #ffffff;
+  background-color: var(--bg-color-btn);
+  color: #fff;
   font-size: 16px;
   font-weight: 500;
   cursor: pointer;
+  transition: var(--transition);
+}
+
+.button:hover {
+  background-color: var(--bg-color-btn-hover);
+}
+
+.loadMoreBtn {
+  display: block;
+  min-width: 145px;
+  height: 56px;
+  margin: 40px auto 0;
+  padding: 0 32px;
+  border-radius: 200px;
+  border: 1px solid var(--border-color-btn);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.loadMoreBtn:hover {
+  border-color: var(--bg-color-btn);
 }

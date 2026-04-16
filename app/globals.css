@@ -7,6 +7,8 @@
   --transition: 250ms ease;
   --main-color: #101828;
   --legend-color: #6c717b;
+  --desc-text: #475467;
+  --badges--color: #f2f4f7;
 }
 *,
 *::before,
