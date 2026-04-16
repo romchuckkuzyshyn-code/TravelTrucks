@@ -2,13 +2,21 @@
 import { ChangeEvent, useState } from "react";
 import FiltersSidebar from "../../components/FiltersSidebar/FiltersSidebar";
 import CampersList from "../../components/CampersList/CampersList";
+import css from "./catalog.module.css";
 
 const Page = () => {
   const [location, setLocation] = useState("");
   const [camperForm, setCamperForm] = useState("");
   const [engine, setEngine] = useState("");
   const [transmission, setTransmission] = useState("");
-  const [formValue, setFormValue] = useState({});
+  const [page, setPage] = useState(1);
+  const [filters, setFilters] = useState({
+    location: "",
+    form: "",
+    engine: "",
+    transmission: "",
+  });
+
   function handleLocationChange(e: ChangeEvent<HTMLInputElement>) {
     setLocation(e.target.value);
   }
@@ -24,23 +32,30 @@ const Page = () => {
   function handleSubmit(e: React.SyntheticEvent<HTMLFormElement>) {
     e.preventDefault();
 
-    const filters = {
+    setFilters({
       location,
       form: camperForm,
       engine,
       transmission,
-    };
-    setFormValue(filters);
+    });
+    setPage(1);
   }
   function handleClearFilters() {
     setLocation("");
     setCamperForm("");
     setEngine("");
     setTransmission("");
+    setFilters({
+      location: "",
+      form: "",
+      engine: "",
+      transmission: "",
+    });
+    setPage(1);
   }
 
   return (
-    <>
+    <div className={css.container}>
       <FiltersSidebar
         handleLocationChange={handleLocationChange}
         handleFormChange={handleFormChange}
@@ -53,15 +68,8 @@ const Page = () => {
         engine={engine}
         transmission={transmission}
       />
-      <CampersList
-        filters={{
-          location,
-          form: camperForm,
-          engine,
-          transmission,
-        }}
-      />
-    </>
+      <CampersList filters={filters} page={page} />
+    </div>
   );
 };
 

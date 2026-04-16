@@ -2,8 +2,11 @@
   --background-main-color: #f7f7f7;
   --bg-color-btn: #829b91;
   --bg-color-btn-hover: #6d7b75;
+  --border-color-btn: #dadde1;
+  --border-color-btn-hover: #6d7b75;
   --transition: 250ms ease;
-  --foreground: #171717;
+  --main-color: #101828;
+  --legend-color: #6c717b;
 }
 *,
 *::before,

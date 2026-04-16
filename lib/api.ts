@@ -1,17 +1,34 @@
 import axios from "axios";
-import { Camper, CampersResponse } from "../types/campersType";
+import {
+  Camper,
+  CampersResponse,
+  GetCampersParams,
+} from "../types/campersType";
 
 const BASE_URL = "https://campers-api.goit.study";
 const endpoint = "/campers";
 const url = BASE_URL + endpoint;
-const options = {
-  params: {
-    page: 1,
-    perPage: 4,
-  },
-};
-export const getCampers = async () => {
-  const res = await axios.get<CampersResponse>(url, options);
+
+export const getCampers = async ({
+  page = 1,
+  perPage = 4,
+  location,
+  form,
+  engine,
+  transmission,
+}: GetCampersParams): Promise<CampersResponse> => {
+  const params: Record<string, string | number> = {
+    page,
+    perPage,
+  };
+  if (location) params.location = location;
+  if (form) params.form = form;
+  if (engine) params.engine = engine;
+  if (transmission) params.transmission = transmission;
+  const res = await axios.get<CampersResponse>(url, {
+    params,
+  });
+
   return res.data;
 };
 

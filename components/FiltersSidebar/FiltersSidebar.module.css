@@ -1,0 +1,162 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  min-width: 360px;
+  max-width: 360px;
+  padding: 24px;
+  background-color: var(--background-main-color);
+  border-radius: 20px;
+}
+
+.locationGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.locationLabel {
+  font-size: 12px;
+  line-height: 1.33;
+  color: #6c717b;
+}
+
+.locationInput {
+  width: 100%;
+  height: 56px;
+  border: none;
+  outline: none;
+  border-radius: 12px;
+  padding: 18px 48px;
+  background-color: #fff;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--main-color);
+}
+
+.locationInput::placeholder {
+  color: var(--legend-color);
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--main-color);
+  margin: 0;
+}
+
+.fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+.legend {
+  width: 100%;
+
+  margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--legend-color);
+}
+
+.optionsList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.optionLabel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.radioInput {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.customRadio {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #6c717b;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: border-color 0.2s ease;
+}
+
+.customRadio::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #475467;
+  transform: scale(0);
+  transition: transform 0.2s ease;
+}
+
+.radioInput:checked + .customRadio::after {
+  transform: scale(1);
+}
+
+.radioInput:checked + .customRadio {
+  border-color: #475467;
+}
+
+.optionText {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--main-color);
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.searchBtn,
+.clearBtn {
+  height: 56px;
+  border-radius: 200px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.searchBtn {
+  border: none;
+  color: var(--background-main-color);
+  background-color: var(--bg-color-btn);
+}
+
+.searchBtn:hover,
+.searchBtn:focus {
+  background-color: var(--bg-color-btn-hover);
+}
+
+.clearBtn {
+  border: 1px solid var(--border-color-btn);
+  color: var(--main-color);
+}
+
+.clearBtn:hover,
+.clearBtn:focus {
+  border-color: var(--border-color-btn-hover);
+}

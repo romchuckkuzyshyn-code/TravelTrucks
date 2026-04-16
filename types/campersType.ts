@@ -12,6 +12,7 @@ export interface Camper {
   price: number;
   rating: number;
   location: string;
+  description: string;
   form: string;
   length: string;
   width: string;
@@ -33,4 +34,13 @@ export interface CamperReview {
   reviewer_name: string;
   reviewer_rating: number;
   comment: string;
+}
+
+export interface GetCampersParams {
+  page?: number;
+  perPage?: number;
+  location?: string;
+  form?: string;
+  engine?: string;
+  transmission?: string;
 }
