@@ -25,6 +25,36 @@ export interface Camper {
   coverImage: string;
   totalReviews: number;
 }
+
+export interface CamperDetails {
+  id: string;
+  name: string;
+  price: number;
+  rating: number;
+  location: string;
+  description: string;
+  form: string;
+  length: string;
+  width: string;
+  height: string;
+  tank: string;
+  consumption: string;
+  transmission: string;
+  engine: string;
+  amenities: string[];
+  createdAt: string;
+  updatedAt: string;
+  gallery: CamperGalleryById[];
+  totalReviews: number;
+}
+export interface CamperGalleryById {
+  id: string;
+  camperId: string;
+  thumb: string;
+  original: string;
+  order: number;
+}
+
 export interface CamperGallery {
   thumb: string;
   original: string;
