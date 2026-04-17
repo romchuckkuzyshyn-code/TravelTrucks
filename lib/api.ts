@@ -1,6 +1,7 @@
 import axios from "axios";
 import {
   Camper,
+  CamperDetails,
   CampersResponse,
   GetCampersParams,
 } from "../types/campersType";
@@ -33,6 +34,6 @@ export const getCampers = async ({
 };
 
 export const getCamperById = async (id: string) => {
-  const res = await axios.get<Camper>(`${url}/${id}`);
+  const res = await axios.get<CamperDetails>(`${url}/${id}`);
   return res.data;
 };

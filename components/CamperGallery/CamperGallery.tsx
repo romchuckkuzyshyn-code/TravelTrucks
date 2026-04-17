@@ -22,8 +22,8 @@ const CamperGallery = ({ gallery, name }: CamperGalleryProps) => {
       <Swiper
         style={
           {
-            "--swiper-navigation-color": "#fff",
-            "--swiper-pagination-color": "#fff",
+            "--swiper-navigation-color": "#829b91",
+            "--swiper-pagination-color": "#829b91",
           } as React.CSSProperties
         }
         loop={true}

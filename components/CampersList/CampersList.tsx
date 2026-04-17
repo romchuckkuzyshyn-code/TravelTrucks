@@ -7,6 +7,7 @@ import { getCampers } from "../../lib/api";
 import Image from "next/image";
 import { FaCar, FaGasPump, FaRegMap, FaStar } from "react-icons/fa";
 import { TbManualGearbox } from "react-icons/tb";
+import Link from "next/link";
 
 interface CampersListProps {
   filters: {
@@ -101,7 +102,14 @@ const CampersList = ({ filters, page, onLoadMore }: CampersListProps) => {
                     </li>
                   </ul>
 
-                  <button className={css.button}>Show more</button>
+                  <Link
+                    href={`/catalog/${camper.id}`}
+                    className={css.button}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Show more
+                  </Link>
                 </div>
               </article>
             </li>
