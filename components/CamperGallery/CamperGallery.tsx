@@ -7,7 +7,6 @@ import Image from "next/image";
 import { useState } from "react";
 import type { Swiper as SwiperType } from "swiper";
 import "swiper/css";
-import "swiper/css/navigation";
 import "swiper/css/free-mode";
 import "swiper/css/thumbs";
 interface CamperGalleryProps {
@@ -20,23 +19,23 @@ const CamperGallery = ({ gallery, name }: CamperGalleryProps) => {
   return (
     <>
       <Swiper
-        style={
-          {
-            "--swiper-navigation-color": "#829b91",
-            "--swiper-pagination-color": "#829b91",
-          } as React.CSSProperties
-        }
+        style={{} as React.CSSProperties}
         loop={true}
         spaceBetween={10}
-        navigation={true}
         thumbs={{ swiper: thumbsSwiper }}
-        modules={[FreeMode, Navigation, Thumbs]}
+        modules={[FreeMode, Thumbs]}
         className={css.mainSwiper}
       >
         {gallery.map((item) => {
           return (
             <SwiperSlide key={item.id}>
-              <Image src={item.original} alt={name} width={638} height={505} />
+              <Image
+                className={css.mainImage}
+                src={item.original}
+                alt={name}
+                width={638}
+                height={505}
+              />
             </SwiperSlide>
           );
         })}
@@ -53,7 +52,13 @@ const CamperGallery = ({ gallery, name }: CamperGalleryProps) => {
       >
         {gallery.map((item) => (
           <SwiperSlide key={item.id}>
-            <Image src={item.thumb} alt={name} width={136} height={144} />
+            <Image
+              className={css.thumbImage}
+              src={item.thumb}
+              alt={name}
+              width={136}
+              height={144}
+            />
           </SwiperSlide>
         ))}
       </Swiper>
