@@ -4,6 +4,7 @@ import {
   CamperDetails,
   CampersResponse,
   GetCampersParams,
+  GetReviews,
 } from "../types/campersType";
 
 const BASE_URL = "https://campers-api.goit.study";
@@ -35,5 +36,10 @@ export const getCampers = async ({
 
 export const getCamperById = async (id: string) => {
   const res = await axios.get<CamperDetails>(`${url}/${id}`);
+  return res.data;
+};
+
+export const getCamperReviewsById = async (id: string) => {
+  const res = await axios.get<GetReviews[]>(`${url}/${id}/reviews`);
   return res.data;
 };

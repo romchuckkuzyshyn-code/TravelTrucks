@@ -1,0 +1,10 @@
+.camperDetail {
+  display: flex;
+
+  gap: 24px;
+}
+
+.container {
+  max-width: 1312px;
+  margin: 64px auto;
+}

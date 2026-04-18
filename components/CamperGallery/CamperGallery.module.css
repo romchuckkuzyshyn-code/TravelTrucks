@@ -1,5 +1,7 @@
+.galleryWrapper {
+  min-width: 638px;
+}
 .mainSwiper {
-  width: 638px;
   margin-bottom: 27px;
   overflow: hidden;
 }

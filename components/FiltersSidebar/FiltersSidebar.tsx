@@ -48,164 +48,165 @@ const FiltersSidebar = ({
         <FaRegMap className={css.mapFind} />
       </div>
 
-      <h3 className={css.title}>Filters</h3>
+      <div className={css.radioForm}>
+        <h3 className={css.title}>Filters</h3>
+        <fieldset className={css.fieldset}>
+          <legend className={css.legend}>Camper form</legend>
 
-      <fieldset className={css.fieldset}>
-        <legend className={css.legend}>Camper form</legend>
+          <div className={css.optionsList}>
+            <label className={css.optionLabel}>
+              <input
+                className={css.radioInput}
+                type="radio"
+                name="form"
+                value="alcove"
+                checked={camperForm === "alcove"}
+                onChange={handleFormChange}
+              />
+              <span className={css.customRadio}></span>
+              <span className={css.optionText}>Alcove</span>
+            </label>
 
-        <div className={css.optionsList}>
-          <label className={css.optionLabel}>
-            <input
-              className={css.radioInput}
-              type="radio"
-              name="form"
-              value="alcove"
-              checked={camperForm === "alcove"}
-              onChange={handleFormChange}
-            />
-            <span className={css.customRadio}></span>
-            <span className={css.optionText}>Alcove</span>
-          </label>
+            <label className={css.optionLabel}>
+              <input
+                className={css.radioInput}
+                type="radio"
+                name="form"
+                value="panel_van"
+                checked={camperForm === "panel_van"}
+                onChange={handleFormChange}
+              />
 
-          <label className={css.optionLabel}>
-            <input
-              className={css.radioInput}
-              type="radio"
-              name="form"
-              value="panel_van"
-              checked={camperForm === "panel_van"}
-              onChange={handleFormChange}
-            />
+              <span className={css.customRadio}></span>
+              <span className={css.optionText}>Panel Van</span>
+            </label>
 
-            <span className={css.customRadio}></span>
-            <span className={css.optionText}>Panel Van</span>
-          </label>
+            <label className={css.optionLabel}>
+              <input
+                className={css.radioInput}
+                type="radio"
+                name="form"
+                value="integrated"
+                checked={camperForm === "integrated"}
+                onChange={handleFormChange}
+              />
 
-          <label className={css.optionLabel}>
-            <input
-              className={css.radioInput}
-              type="radio"
-              name="form"
-              value="integrated"
-              checked={camperForm === "integrated"}
-              onChange={handleFormChange}
-            />
+              <span className={css.customRadio}></span>
+              <span className={css.optionText}>Integrated</span>
+            </label>
 
-            <span className={css.customRadio}></span>
-            <span className={css.optionText}>Integrated</span>
-          </label>
+            <label className={css.optionLabel}>
+              <input
+                className={css.radioInput}
+                type="radio"
+                name="form"
+                value="semi_integrated"
+                checked={camperForm === "semi_integrated"}
+                onChange={handleFormChange}
+              />
 
-          <label className={css.optionLabel}>
-            <input
-              className={css.radioInput}
-              type="radio"
-              name="form"
-              value="semi_integrated"
-              checked={camperForm === "semi_integrated"}
-              onChange={handleFormChange}
-            />
+              <span className={css.customRadio}></span>
+              <span className={css.optionText}>Semi Integrated</span>
+            </label>
+          </div>
+        </fieldset>
 
-            <span className={css.customRadio}></span>
-            <span className={css.optionText}>Semi Integrated</span>
-          </label>
-        </div>
-      </fieldset>
+        <fieldset className={css.fieldset}>
+          <legend className={css.legend}>Engine</legend>
 
-      <fieldset className={css.fieldset}>
-        <legend className={css.legend}>Engine</legend>
+          <div className={css.optionsList}>
+            <label className={css.optionLabel}>
+              <input
+                className={css.radioInput}
+                type="radio"
+                name="engine"
+                value="diesel"
+                checked={engine === "diesel"}
+                onChange={handleEngineChange}
+              />
 
-        <div className={css.optionsList}>
-          <label className={css.optionLabel}>
-            <input
-              className={css.radioInput}
-              type="radio"
-              name="engine"
-              value="diesel"
-              checked={engine === "diesel"}
-              onChange={handleEngineChange}
-            />
+              <span className={css.customRadio}></span>
+              <span className={css.optionText}>Diesel</span>
+            </label>
 
-            <span className={css.customRadio}></span>
-            <span className={css.optionText}>Diesel</span>
-          </label>
+            <label className={css.optionLabel}>
+              <input
+                className={css.radioInput}
+                type="radio"
+                name="engine"
+                value="petrol"
+                checked={engine === "petrol"}
+                onChange={handleEngineChange}
+              />
 
-          <label className={css.optionLabel}>
-            <input
-              className={css.radioInput}
-              type="radio"
-              name="engine"
-              value="petrol"
-              checked={engine === "petrol"}
-              onChange={handleEngineChange}
-            />
+              <span className={css.customRadio}></span>
+              <span className={css.optionText}>Petrol</span>
+            </label>
 
-            <span className={css.customRadio}></span>
-            <span className={css.optionText}>Petrol</span>
-          </label>
+            <label className={css.optionLabel}>
+              <input
+                className={css.radioInput}
+                type="radio"
+                name="engine"
+                value="hybrid"
+                checked={engine === "hybrid"}
+                onChange={handleEngineChange}
+              />
 
-          <label className={css.optionLabel}>
-            <input
-              className={css.radioInput}
-              type="radio"
-              name="engine"
-              value="hybrid"
-              checked={engine === "hybrid"}
-              onChange={handleEngineChange}
-            />
+              <span className={css.customRadio}></span>
+              <span className={css.optionText}>Hybrid</span>
+            </label>
 
-            <span className={css.customRadio}></span>
-            <span className={css.optionText}>Hybrid</span>
-          </label>
+            <label className={css.optionLabel}>
+              <input
+                className={css.radioInput}
+                type="radio"
+                name="engine"
+                value="electric"
+                checked={engine === "electric"}
+                onChange={handleEngineChange}
+              />
 
-          <label className={css.optionLabel}>
-            <input
-              className={css.radioInput}
-              type="radio"
-              name="engine"
-              value="electric"
-              checked={engine === "electric"}
-              onChange={handleEngineChange}
-            />
+              <span className={css.customRadio}></span>
+              <span className={css.optionText}>Electric</span>
+            </label>
+          </div>
+        </fieldset>
 
-            <span className={css.customRadio}></span>
-            <span className={css.optionText}>Electric</span>
-          </label>
-        </div>
-      </fieldset>
+        <fieldset className={css.fieldset}>
+          <legend className={css.legend}>Transmission</legend>
 
-      <fieldset className={css.fieldset}>
-        <legend className={css.legend}>Transmission</legend>
+          <div className={css.optionsList}>
+            <label className={css.optionLabel}>
+              <input
+                className={css.radioInput}
+                type="radio"
+                name="transmission"
+                value="automatic"
+                checked={transmission === "automatic"}
+                onChange={handleTransmissionChange}
+              />
 
-        <div className={css.optionsList}>
-          <label className={css.optionLabel}>
-            <input
-              className={css.radioInput}
-              type="radio"
-              name="transmission"
-              value="automatic"
-              checked={transmission === "automatic"}
-              onChange={handleTransmissionChange}
-            />
+              <span className={css.customRadio}></span>
+              <span className={css.optionText}>Automatic</span>
+            </label>
 
-            <span className={css.customRadio}></span>
-            <span className={css.optionText}>Automatic</span>
-          </label>
+            <label className={css.optionLabel}>
+              <input
+                className={css.radioInput}
+                type="radio"
+                name="transmission"
+                value="manual"
+                checked={transmission === "manual"}
+                onChange={handleTransmissionChange}
+              />
 
-          <label className={css.optionLabel}>
-            <input
-              className={css.radioInput}
-              type="radio"
-              name="transmission"
-              value="manual"
-              checked={transmission === "manual"}
-              onChange={handleTransmissionChange}
-            />
-
-            <span className={css.customRadio}></span>
-            <span className={css.optionText}>Manual</span>
-          </label>
-        </div>
-      </fieldset>
+              <span className={css.customRadio}></span>
+              <span className={css.optionText}>Manual</span>
+            </label>
+          </div>
+        </fieldset>
+      </div>
 
       <div className={css.actions}>
         <button className={css.searchBtn} type="submit">

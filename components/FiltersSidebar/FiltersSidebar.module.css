@@ -4,6 +4,7 @@
   gap: 40px;
   min-width: 360px;
   max-width: 360px;
+  height: 840px;
   padding: 24px;
   background-color: var(--background-main-color);
   border-radius: 20px;
@@ -42,6 +43,13 @@
 .locationInput:hover,
 .locationInput:focus {
   border: 1px solid var(--bg-color-btn-hover);
+}
+
+.radioForm {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 8px;
 }
 
 .title {
