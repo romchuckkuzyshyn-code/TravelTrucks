@@ -8,3 +8,8 @@
   max-width: 1312px;
   margin: 64px auto;
 }
+
+.review {
+  display: flex;
+  gap: 48px;
+}

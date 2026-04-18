@@ -3,7 +3,7 @@
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
-  width: 623px;
+  min-width: 623px;
   gap: 24px;
 }
 .reviewItem {

@@ -26,7 +26,7 @@
 .locationInput {
   width: 100%;
   height: 56px;
-  border: none;
+  border: 1px solid #fff;
   outline: none;
   border-radius: 12px;
   padding: 18px 48px;

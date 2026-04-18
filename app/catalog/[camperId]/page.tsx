@@ -4,6 +4,7 @@ import CamperGallery from "../../../components/CamperGallery/CamperGallery";
 import CamperDetailsCard from "../../../components/CamperDetailsCard/CamperDetailsCard";
 import css from "./page.module.css";
 import ReviewsList from "../../../components/ReviewsList/ReviewsList";
+import BookingForm from "../../../components/BookingForm/BookingForm";
 
 interface PageProps {
   params: Promise<{ camperId: CamperDetails["id"] }>;
@@ -20,9 +21,10 @@ const Page = async ({ params }: PageProps) => {
         <CamperGallery gallery={camper.gallery} name={camper.name} />
         <CamperDetailsCard camper={camper} />
       </div>
+      <h2 className={css.title}>Reviews</h2>
       <div className={css.review}>
-        <h2 className={css.title}>Reviews</h2>
         <ReviewsList reviews={camperReviews} />
+        <BookingForm id={camperId} />
       </div>
     </main>
   );

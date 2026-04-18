@@ -1,6 +1,5 @@
 import axios from "axios";
 import {
-  Camper,
   CamperDetails,
   CampersResponse,
   GetCampersParams,
@@ -41,5 +40,13 @@ export const getCamperById = async (id: string) => {
 
 export const getCamperReviewsById = async (id: string) => {
   const res = await axios.get<GetReviews[]>(`${url}/${id}/reviews`);
+  return res.data;
+};
+
+export const createBooking = async (
+  camperId: string,
+  data: { name: string; email: string },
+) => {
+  const res = await axios.post(`/campers/${camperId}/booking-requests`, data);
   return res.data;
 };
