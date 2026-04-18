@@ -1,7 +1,6 @@
 .reviewList {
   display: flex;
   align-items: flex-start;
-  justify-content: center;
   flex-direction: column;
   min-width: 623px;
   gap: 24px;
@@ -9,6 +8,7 @@
 .reviewItem {
   display: flex;
   flex-direction: column;
+  width: 100%;
   background-color: var(--background-main-color);
   gap: 16px;
   border-radius: 16px;

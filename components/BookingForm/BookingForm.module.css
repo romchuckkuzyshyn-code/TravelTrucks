@@ -2,6 +2,7 @@
   display: flex;
   align-items: flex-start;
   flex-direction: column;
+  width: 641px;
   gap: 24px;
   border-radius: 16px;
   padding: 44px;
@@ -27,7 +28,7 @@
 .inputs {
   display: flex;
   flex-direction: column;
-  width: 641px;
+  width: 100%;
   gap: 14px;
 }
 .inputName {

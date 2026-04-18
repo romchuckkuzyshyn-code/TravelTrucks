@@ -13,3 +13,7 @@
   display: flex;
   gap: 48px;
 }
+.title {
+  margin-top: 88px;
+  margin-bottom: 24px;
+}
