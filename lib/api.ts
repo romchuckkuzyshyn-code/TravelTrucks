@@ -6,9 +6,9 @@ import {
   GetReviews,
 } from "../types/campersType";
 
-const BASE_URL = "https://campers-api.goit.study";
+const BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
 const endpoint = "/campers";
-const url = BASE_URL + endpoint;
+const url = `${BASE_URL}${endpoint}`;
 
 export const getCampers = async ({
   page = 1,

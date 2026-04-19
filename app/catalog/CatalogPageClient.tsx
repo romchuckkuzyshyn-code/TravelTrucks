@@ -37,6 +37,10 @@ const CatalogPageClient = () => {
       engine,
       transmission,
     });
+    setLocation("");
+    setCamperForm("");
+    setEngine("");
+    setTransmission("");
   }
   function handleClearFilters() {
     setLocation("");
