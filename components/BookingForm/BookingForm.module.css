@@ -2,7 +2,7 @@
   display: flex;
   align-items: flex-start;
   flex-direction: column;
-  width: 641px;
+  min-width: 641px;
   gap: 24px;
   border-radius: 16px;
   padding: 44px;

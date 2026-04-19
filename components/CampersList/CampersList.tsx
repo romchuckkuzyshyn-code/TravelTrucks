@@ -1,13 +1,12 @@
 "use client";
-import { useEffect, useState } from "react";
 import css from "./CampersList.module.css";
-import { Camper } from "../../types/campersType";
-import { useQuery } from "@tanstack/react-query";
+import { useInfiniteQuery } from "@tanstack/react-query";
 import { getCampers } from "../../lib/api";
 import Image from "next/image";
 import { FaCar, FaGasPump, FaRegMap, FaStar } from "react-icons/fa";
 import { TbManualGearbox } from "react-icons/tb";
 import Link from "next/link";
+import Loader from "../Loader/Loader";
 
 interface CampersListProps {
   filters: {
@@ -16,38 +15,53 @@ interface CampersListProps {
     engine: string;
     transmission: string;
   };
-  page: number;
-  onLoadMore: () => void;
 }
-const CampersList = ({ filters, page, onLoadMore }: CampersListProps) => {
-  const [visibleCampers, setVisibleCampers] = useState<Camper[]>([]);
-  const { data, isLoading, isError } = useQuery({
-    queryKey: ["getCampers", filters, page],
-    queryFn: () =>
+
+const CampersList = ({ filters }: CampersListProps) => {
+  const {
+    data,
+    isPending,
+    isError,
+    fetchNextPage,
+    hasNextPage,
+    isFetchingNextPage,
+  } = useInfiniteQuery({
+    queryKey: ["getCampers", filters],
+    queryFn: ({ pageParam }) =>
       getCampers({
-        page,
+        page: pageParam,
         perPage: 4,
         location: filters.location,
         form: filters.form,
         engine: filters.engine,
         transmission: filters.transmission,
       }),
+    initialPageParam: 1,
+    getNextPageParam: (lastPage) => {
+      return lastPage.page < lastPage.totalPages
+        ? lastPage.page + 1
+        : undefined;
+    },
   });
-  /* eslint-disable react-hooks/set-state-in-effect */
-  useEffect(() => {
-    if (!data?.campers) return;
 
-    if (page === 1) {
-      setVisibleCampers(data.campers);
-    } else {
-      setVisibleCampers((prev) => [...prev, ...data.campers]);
-    }
-  }, [data, page]);
+  const campers = data?.pages.flatMap((page) => page.campers) ?? [];
+
+  if (isPending) {
+    return (
+      <div className={css.loaderWrap}>
+        <Loader />
+      </div>
+    );
+  }
+
+  if (isError) {
+    return <p>Something went wrong</p>;
+  }
 
   return (
     <div>
       <ul className={css.camperList}>
-        {visibleCampers.map((camper) => {
+        {campers.map((camper) => {
           return (
             <li key={camper.id} className={css.item}>
               <article className={css.card}>
@@ -116,9 +130,15 @@ const CampersList = ({ filters, page, onLoadMore }: CampersListProps) => {
           );
         })}
       </ul>
-      {data && data.totalPages > 1 && page < data.totalPages && (
-        <button className={css.loadMoreBtn} type="button" onClick={onLoadMore}>
-          Load more
+
+      {hasNextPage && (
+        <button
+          className={css.loadMoreBtn}
+          type="button"
+          onClick={() => fetchNextPage()}
+          disabled={isFetchingNextPage}
+        >
+          {isFetchingNextPage ? "Loading..." : "Load more"}
         </button>
       )}
     </div>

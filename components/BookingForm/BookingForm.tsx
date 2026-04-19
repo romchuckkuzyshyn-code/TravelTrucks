@@ -2,6 +2,7 @@
 import { useMutation } from "@tanstack/react-query";
 import css from "./BookingForm.module.css";
 import { createBooking } from "../../lib/api";
+import { toast } from "react-toastify";
 
 interface BookingFormProps {
   id: string;
@@ -20,6 +21,14 @@ const BookingForm = ({ id }: BookingFormProps) => {
     mutationKey: ["createBooking", id],
     mutationFn: ({ name, email }: BookingData) =>
       createBooking(id, { name, email }),
+
+    onSuccess: () => {
+      toast.success("Booking request sent successfully 🚐");
+    },
+
+    onError: () => {
+      toast.error("Something went wrong 😢");
+    },
   });
   return (
     <form className={css.form} action={handleSubmit}>

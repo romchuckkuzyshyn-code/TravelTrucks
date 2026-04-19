@@ -5,18 +5,42 @@
   gap: 40px;
   padding-left: 64px;
   padding-top: 195px;
-
-  background-image: url(/public/images/Picture.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+}
+.page {
+  min-height: calc(100vh - 72px);
 }
 
-@media (min-resolution: 192dpi), (min-resolution: 2dppx) {
-  .main-container {
-    background-image: url(/public/images/Picture2x.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-  }
+.heroWrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.hero {
+  position: relative;
+  min-height: calc(100vh - 72px);
+  background-image: url("/images/Picture.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  padding-left: 64px;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(17, 24, 39, 0.55) 0%,
+    rgba(17, 24, 39, 0.28) 40%,
+    rgba(17, 24, 39, 0.08) 70%,
+    rgba(17, 24, 39, 0) 100%
+  );
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  max-width: 571px;
 }

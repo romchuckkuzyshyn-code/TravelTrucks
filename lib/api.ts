@@ -47,6 +47,9 @@ export const createBooking = async (
   camperId: string,
   data: { name: string; email: string },
 ) => {
-  const res = await axios.post(`/campers/${camperId}/booking-requests`, data);
+  const res = await axios.post(
+    `${BASE_URL}/campers/${camperId}/booking-requests`,
+    data,
+  );
   return res.data;
 };

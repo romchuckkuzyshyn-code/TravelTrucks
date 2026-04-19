@@ -7,6 +7,15 @@ interface CamperDetailsProps {
 }
 
 const CamperDetailsCard = ({ camper }: CamperDetailsProps) => {
+  const formatAmenity = (value: string) => {
+    if (value.toLowerCase() === "tv") return "TV";
+    if (value.toLowerCase() === "ac") return "AC";
+
+    return value
+      .split("_")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" ");
+  };
   return (
     <div className={css.camperDesc}>
       <div className={css.vehicleDesc}>
@@ -43,10 +52,7 @@ const CamperDetailsCard = ({ camper }: CamperDetailsProps) => {
             </li>
             {camper.amenities.map((item) => (
               <li key={item} className={css.vehicleItem}>
-                {item
-                  .split("_")
-                  .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-                  .join(" ")}
+                {formatAmenity(item)}
               </li>
             ))}
           </ul>

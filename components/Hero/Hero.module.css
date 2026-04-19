@@ -1,27 +1,43 @@
+.heroBox {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
 .title {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
+
 .headline {
   font-weight: 600;
   font-size: 48px;
-  line-height: 67%;
-  color: var(--background-main-color);
+  line-height: 1;
+  color: #f7f7f7;
 }
+
 .descr {
   font-weight: 600;
   font-size: 24px;
-  line-height: 133%;
-  color: var(--background-main-color);
+  line-height: 1.33;
+  color: #f7f7f7;
 }
 
 .button {
-  border-radius: 200px;
-  padding: 16px 60px;
-  width: 173px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  min-width: 173px;
   height: 56px;
+  padding: 16px 60px;
+  border-radius: 200px;
   background-color: var(--bg-color-btn);
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
   transition: var(--transition);
 }
 

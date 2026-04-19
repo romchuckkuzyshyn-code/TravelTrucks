@@ -1,5 +1,5 @@
 "use client";
-import { FreeMode, Navigation, Thumbs } from "swiper/modules";
+import { FreeMode, Thumbs } from "swiper/modules";
 import { CamperGalleryById } from "../../types/campersType";
 import css from "./CamperGallery.module.css";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -7,8 +7,8 @@ import Image from "next/image";
 import { useState } from "react";
 import type { Swiper as SwiperType } from "swiper";
 import "swiper/css";
-// import "swiper/css/free-mode";
-// import "swiper/css/thumbs";
+import "swiper/css/free-mode";
+import "swiper/css/thumbs";
 interface CamperGalleryProps {
   gallery: CamperGalleryById[];
   name: string;
@@ -16,10 +16,10 @@ interface CamperGalleryProps {
 
 const CamperGallery = ({ gallery, name }: CamperGalleryProps) => {
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
+
   return (
     <div className={css.galleryWrapper}>
       <Swiper
-        style={{} as React.CSSProperties}
         loop={true}
         spaceBetween={10}
         thumbs={{ swiper: thumbsSwiper }}
@@ -47,7 +47,7 @@ const CamperGallery = ({ gallery, name }: CamperGalleryProps) => {
         slidesPerView={4}
         freeMode={true}
         watchSlidesProgress={true}
-        modules={[FreeMode, Navigation, Thumbs]}
+        modules={[FreeMode, Thumbs]}
         className={css.thumbSwiper}
       >
         {gallery.map((item) => (
