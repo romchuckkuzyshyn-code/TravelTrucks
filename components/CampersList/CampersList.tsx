@@ -58,6 +58,15 @@ const CampersList = ({ filters }: CampersListProps) => {
     return <p>Something went wrong</p>;
   }
 
+  if (campers.length === 0) {
+    return (
+      <div className={css.emptyState}>
+        <h2 className={css.emptyTitle}>No campers found</h2>
+        <p className={css.emptyText}>Try changing or clearing the filters.</p>
+      </div>
+    );
+  }
+
   return (
     <div>
       <ul className={css.camperList}>

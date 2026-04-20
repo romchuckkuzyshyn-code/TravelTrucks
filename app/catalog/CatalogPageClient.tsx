@@ -56,7 +56,7 @@ const CatalogPageClient = () => {
   }
 
   return (
-    <div className={css.container}>
+    <main className={css.container}>
       <FiltersSidebar
         handleLocationChange={handleLocationChange}
         handleFormChange={handleFormChange}
@@ -70,7 +70,7 @@ const CatalogPageClient = () => {
         transmission={transmission}
       />
       <CampersList filters={filters} />
-    </div>
+    </main>
   );
 };
 
