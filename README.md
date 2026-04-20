@@ -1,36 +1,96 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# TravelTrucks
+
+TravelTrucks is a frontend web application for a camper rental company. The project was built as a study assignment using Next.js and TypeScript.
+
+## Description
+
+The application allows users to browse available campers, filter them in the catalog, open a detailed page for a selected camper, view reviews, and send a booking request.
+
+## Main Features
+
+- Home page with hero section
+- Campers catalog page
+- Filtering by:
+  - location
+  - camper form
+  - engine type
+  - transmission type
+- Load More pagination
+- Camper details page
+- Image gallery
+- Reviews section
+- Booking form
+- Notification after successful booking
+
+## Technologies
+
+- Next.js
+- React
+- TypeScript
+- TanStack Query
+- Swiper
+- React Toastify
+- CSS Modules
 
 ## Getting Started
 
-First, run the development server:
+### Install dependencies
 
-```bash
+npm install
+
+### Create environment variables file
+
+Create a `.env.local` file in the root of the project and add:
+
+NEXT_PUBLIC_API_BASE_URL=https://campers-api.goit.study
+
+### Run the project
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Open in browser
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+http://localhost:3000
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Scripts
 
-## Learn More
+npm run dev  
+npm run build  
+npm run start  
+npm run lint
 
-To learn more about Next.js, take a look at the following resources:
+## Project Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+app/  
+ catalog/  
+ [camperId]/  
+ layout.tsx  
+ page.tsx
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+components/  
+ BookingForm/  
+ CamperDetailsCard/  
+ CamperGallery/  
+ CampersList/  
+ FiltersSidebar/  
+ Header/  
+ Hero/  
+ Loader/  
+ ReviewsList/  
+ TanStackProvider/
 
-## Deploy on Vercel
+lib/  
+ api.ts
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+types/  
+ campersType.ts
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Pages
+
+/ — Home page  
+/catalog — Campers catalog page  
+/catalog/[camperId] — Camper details page
+
+## Author
+
+Roman Kuzyshyn
