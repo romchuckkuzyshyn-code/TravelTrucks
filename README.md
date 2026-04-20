@@ -61,36 +61,36 @@ npm run lint
 
 ## Project Structure
 
--app/  
- -catalog/  
- -[camperId]/  
- -layout.tsx  
- -page.tsx
+app/  
+ catalog/  
+ [camperId]/  
+ layout.tsx  
+ page.tsx
 
--components/  
- -BookingForm/  
- -CamperDetailsCard/  
- -CamperGallery/  
- -CampersList/  
- -FiltersSidebar/  
- -Header/  
- -Hero/  
- -Loader/  
- -ReviewsList/  
- -TanStackProvider/
+components/  
+ BookingForm/  
+ CamperDetailsCard/  
+ CamperGallery/  
+ CampersList/  
+ FiltersSidebar/  
+ Header/  
+ Hero/  
+ Loader/  
+ ReviewsList/  
+ TanStackProvider/
 
--lib/  
- -api.ts
+lib/  
+ api.ts
 
--types/  
- -campersType.ts
+types/  
+ campersType.ts
 
 ## Pages
 
--/ — Home page  
--/catalog — Campers catalog page  
--/catalog/[camperId] — Camper details page
+/ — Home page  
+/catalog — Campers catalog page  
+/catalog/[camperId] — Camper details page
 
 ## Author
 
--Roman Kuzyshyn
+Roman Kuzyshyn
