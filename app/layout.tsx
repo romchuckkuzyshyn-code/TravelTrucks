@@ -10,7 +10,7 @@ interface RootLayoutProps {
   children: React.ReactNode;
 }
 export const metadata: Metadata = {
-  metadataBase: new URL("travel-trucks-three-lovat.vercel.app"),
+  metadataBase: new URL("https://travel-trucks-three-lovat.vercel.app"),
   title: {
     default: "TravelTrucks",
     template: "%s | TravelTrucks",
